@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceder a URL</title>
+</head>
+<body bgcolor="white">
+    <form id="urlForm">
+        <label for="urlInput">Introduce una URL:</label>
+        <input type="url" id="urlInput" name="url" placeholder="https://ejemplo.com" required>
+        <button type="submit">Ir</button>
+    </form>
+<p>(VISOR 1)</p>
+
+    <script>
+        document.getElementById('urlForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var url = document.getElementById('urlInput').value;
+            if (url) {
+                // Agregar el protocolo 'http://' si no está presente
+                if (!/^https?:\/\//i.test(url)) {
+                    url = 'http://' + url;
+                }
+                window.location.href = url;
+            }
+        });
+    </script>
+</body>
+</html>

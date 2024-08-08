@@ -1,0 +1,81 @@
+<html>
+<head>
+<title>DUPLEXCA - 2 sitios web a la vez</title>
+<meta charset="UTF-8">
+<link rel="shortcut icon" href="">
+
+<meta name="author" content="Johan Gzz">
+<meta name="description" content="Visualiza 2 pantallas al mismo tiempo. 2 pestañas. Sitios web en ventana doble.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<style>
+
+body{
+background-image: url("yellow-and-orange-background.jpg");
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size:cover;
+}
+
+.visor1{
+height:75%; width:48%; left:10px; position:fixed; transition-duration:5s; border-radius:30px;
+}
+
+.visor2{
+height:75%; width:48%; right:10px; position:fixed; transition-duration:5s; border-radius:30px;
+}
+
+.botonreiniciarvisor1{
+text-decoration:none;
+background-color:lightgray;
+border-radius:50%;
+padding:10px;
+position:fixed;
+bottom:0px;
+left:0px;
+color:black;
+border:1px solid black;
+}
+
+.botonreiniciarvisor2{
+text-decoration:none;
+background-color:lightgray;
+border-radius:50%;
+padding:10px;
+position:fixed;
+bottom:0px;
+right:0px;
+color:black;
+border:1px solid black;
+}
+
+/* Pantallas de 800px o inferior */
+
+@media only screen and (max-width: 800px) {
+
+.visor1{
+height:40%; width:100%; left:0px; top:12%; transition-duration:5s; border-radius:30px;
+}
+
+.visor2{
+height:40%; width:100%; right:0px; bottom:5%; transition-duration:5s; border-radius:30px;
+}
+
+}
+
+</style>
+
+</head>
+<body bgcolor="orange">
+
+
+<h2 style="font-family:arial;"><i>DUPLEXCA </i>(beta)</h2>
+<p>2 sitios web a la vez</p>
+<iframe class="visor1" src="visor1texto.htm" name="visor1"></iframe>
+<iframe class="visor2" src="visor2texto.htm" name="visor2"></iframe>
+<a class="botonreiniciarvisor1" href="visor1texto.htm" target="visor1">Cambiar URL 1</a>
+<a class="botonreiniciarvisor2" href="visor2texto.htm" target="visor2">Cambiar URL 2</a>
+
+
+</body>
+</html>
